@@ -42,14 +42,18 @@ def go_again():
                 winning_turtle = turtle.pencolor()
                 if winning_turtle == user_bet:
                     print(f"You've won, the winning turtle was {turtle.pencolor()}")
+                    user_play_again = screen.textinput(title="Play again", prompt=f"You won, The winning turtle was "
+                                                                                  f"{turtle.pencolor()} "
+                                                                                  f"Do you want to play again? y / n: ")
                 else:
                     print(f"You lost, winning turtle was {turtle.pencolor()}")
-                user_play_again = screen.textinput(title="Play again", prompt=f"The winning turtle was "
-                                                                              f"{turtle.pencolor()} "
-                                                                              f"Do you want to play again? y / n: ")
+                    user_play_again = screen.textinput(title="Play again", prompt=f"You lost, the winning turtle was "
+                                                                                  f"{turtle.pencolor()} "
+                                                                                  f"Do you want to play again? y / n: ")
                 if user_play_again == "y":
                     screen.clear()
                     go_again()
+
             random_pace = random.randint(0, 10)
             turtle.forward(random_pace)
 
